@@ -1,12 +1,15 @@
 import React from 'react';
 import ProductItem from './ProductItem';
 
-function ProductList(props) {
+function ProductList({data}) {
+    const list = data;
     return (
         <div className='tab-list'>
-            <h2>브랜드이름</h2>
+            <h2 className='brandTitle'>{list.brand}</h2>
             <ul className='tab'>
-                <ProductItem />
+               {
+                 list.images.map((imgData,index)=> <ProductItem key={index} data={imgData} />)
+               }
             </ul>
         </div>
     );

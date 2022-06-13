@@ -1,14 +1,31 @@
 import React from 'react';
 import ProductList from './ProductList';
+import './css/ProductTab.css';
+import productData from './../../db/productData.json';
+import {useState} from 'react';
 
-function ProductTab(props) {
+function ProductTab() {
+    const [num, setNum] = useState(0);
+    const tabDate=productData;
+    const code =  tabDate.filter((data,index)=>index === num)
+    console.log(code)
+    const fncTab =(e,index) => {
+        e.preventDefault();
+        setNum(index);
+    }
     return (
         <div className='product-tab'>
             <div className='tab-btn'>
-                <button>브랜명</button>
+                {
+                    tabDate.map((data,index)=><button className='btn' key={data.id} onClick={(e)=>{fncTab(e,index)}} >{data.brand}</button>)
+                }
+                
             </div>
             <div className='tab-contents'>
-                <ProductList />
+                {
+                    code.map((data,index) => <ProductList key={data.id} data={data} />)
+                }
+               
             </div>
         </div>
     );
