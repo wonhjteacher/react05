@@ -15,6 +15,15 @@
     border:none;
     background-color: #fff;
  }
+ .tab-btn .btn.active{
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border-top:1px solid rgb(255, 11, 84);
+    border-bottom:1px solid rgb(255, 11, 84);
+    color:rgb(255, 11, 84);
+  
+ }
+
 
  .tab-list .brandTitle{
     font-size: 1.25rem;

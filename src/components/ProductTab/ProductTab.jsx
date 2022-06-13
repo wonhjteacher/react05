@@ -17,7 +17,7 @@ function ProductTab() {
         <div className='product-tab'>
             <div className='tab-btn'>
                 {
-                    tabDate.map((data,index)=><button className='btn' key={data.id} onClick={(e)=>{fncTab(e,index)}} >{data.brand}</button>)
+                    tabDate.map((data,index)=><button className={ num===index ? "btn active" : "btn"} key={data.id} onClick={(e)=>{fncTab(e,index)}} >{data.brand}</button>)
                 }
                 
             </div>
